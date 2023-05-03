@@ -9,7 +9,7 @@
 <body>
     <h1>This is a template</h1>
     {% for item in item_list %}
-        {{item.item_name}}
+        <p><a href="{% url 'detail' item.id %}">{{item.id}} {{item.item_name}}</a></p>
     {% endfor %}
 </body>
 </html>

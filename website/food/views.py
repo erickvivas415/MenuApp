@@ -13,3 +13,11 @@ def index(request):
 
 def item(request):
     return HttpResponse('This is an item view')
+
+def detail(request,item_id):
+    item = Item.objects.get(pk=item_id)
+    context = {
+        'item': item,
+    }
+    template = loader.get_template('food/item.html')
+    return render(request,'food/item.html', context)
