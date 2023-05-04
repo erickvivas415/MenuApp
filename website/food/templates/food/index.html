@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This is a template</h1>
+{% extends 'food/base.html' %}
+
+{% block content %}
+
     {% for item in item_list %}
-        <p><a href="{% url 'detail' item.id %}">{{item.id}} {{item.item_name}}</a></p>
+        <p class="test"><a href="{% url 'food:detail' item.id %}">{{item.id}} {{item.item_name}}</a></p>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}

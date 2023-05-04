@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+
+app_name = 'food'
 urlpatterns = [
     # Path food/ from urls.py on website project
     path('', views.index, name='index'),
