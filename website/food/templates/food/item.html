@@ -1,3 +1,17 @@
-<h1>{{ item.item_name }}</h1>
-<h2>{{ item.item_desc }}</h2>
-<h3>{{ item.item_price }}</h3>
+{% extends 'food/base.html' %}
+
+{% block content %}
+
+<div class="card mt-4" style="width: 18rem;">
+    <img src="{{item.item_image}}" class="card-img-top" alt="...">
+    <div class="card-body">      
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><h5 class="card-title">{{ item.item_name }}</h5></li>
+        <li class="list-group-item"><p class="card-text">{{ item.item_desc }}</p></li>
+        <li class="list-group-item"><p class="card-text">$ {{ item.item_price }}</p></li>
+      </ul>
+      <a href="{% url 'food:index' %}" class="btn btn-primary">Go back</a>
+    </div>
+</div>
+
+{% endblock %}
