@@ -1,0 +1,12 @@
+{% extends 'food/base.html' %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-secondary" type="submit">Save</button>
+    </form>
+
+
+{% endblock %}
