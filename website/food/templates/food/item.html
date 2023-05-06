@@ -10,6 +10,7 @@
         <li class="list-group-item"><p class="card-text">{{ item.item_desc }}</p></li>
         <li class="list-group-item"><p class="card-text">$ {{ item.item_price }}</p></li>
       </ul>
+      <a href="{% url 'food:update_item' item.id %}" class="btn btn-primary mb-2" >Update</a>
       <form method="POST" action="{% url 'food:delete_item' item.id %}">
         {% csrf_token %}
         <button class="btn btn-primary mb-2" type="submit">Delete</button>
