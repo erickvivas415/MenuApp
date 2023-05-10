@@ -11,7 +11,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request,"Your account is created")
-            return redirect('food:index')
+            return redirect('login') # return redirect('food:index')
     else:
         form = RegisterForm()
     return render(request, 'user/register.html', {'form': form})
