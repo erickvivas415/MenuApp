@@ -3,7 +3,15 @@
 {% block content %}
 <div class="col-md-6 offset-md-3 mt-3">
 
-    <h1>{{ user.username }}</h1>
+    <div class="card" style="width: 18rem;">
+        <img src="{{ user.profile.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ user.username }}</h5>
+          <p class="card-text">{{ user.profile.location }}</p>
+          <a href="{% url 'food:index' %}" class="btn btn-primary">Go back</a>
+        </div>
+      </div>
+
 
 </div>
 
