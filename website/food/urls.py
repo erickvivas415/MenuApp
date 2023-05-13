@@ -6,7 +6,8 @@ from . import views
 app_name = 'food'
 urlpatterns = [
     # Path food/ from urls.py on website project
-    path('', views.index, name='index'),
+    #path('', views.index, name='index'), #Replaced to use class views
+    path('', views.IndexClassView.as_view(), name='index'),
     path('item/', views.item, name='item'),
     path('<int:item_id>/', views.detail, name='detail'),
     # Add items
