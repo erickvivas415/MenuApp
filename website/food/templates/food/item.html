@@ -6,9 +6,9 @@
     <img src="{{item.item_image}}" class="card-img-top" alt="...">
     <div class="card-body">      
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><h5 class="card-title">{{ item.item_name }}</h5></li>
-        <li class="list-group-item"><p class="card-text">{{ item.item_desc }}</p></li>
-        <li class="list-group-item"><p class="card-text">$ {{ item.item_price }}</p></li>
+        <li class="list-group-item"><h5 class="card-title">{{ object.item_name }}</h5></li>
+        <li class="list-group-item"><p class="card-text">{{ object.item_desc }}</p></li>
+        <li class="list-group-item"><p class="card-text">$ {{ object.item_price }}</p></li>
       </ul>
       <a href="{% url 'food:update_item' item.id %}" class="btn btn-primary mb-2" >Update</a>
       <form method="POST" action="{% url 'food:delete_item' item.id %}">

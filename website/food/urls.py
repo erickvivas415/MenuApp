@@ -9,7 +9,8 @@ urlpatterns = [
     #path('', views.index, name='index'), #Replaced to use class views
     path('', views.IndexClassView.as_view(), name='index'),
     path('item/', views.item, name='item'),
-    path('<int:item_id>/', views.detail, name='detail'),
+    #path('<int:item_id>/', views.detail, name='detail'),
+    path('<int:pk>/', views.FoodDetail.as_view(), name='detail'),
     # Add items
     path('add', views.create_item, name="create_item"),
     # Update items
