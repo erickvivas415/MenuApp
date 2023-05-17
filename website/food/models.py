@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -14,5 +15,8 @@ class Item(models.Model):
     item_image = models.CharField(max_length=500, default="http://www.ukvisitorguide.cn/wp-content/uploads/2015/11/Food-placeholder.jpg")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("food:detail", kwargs={"pk": self.pk})
 
 
