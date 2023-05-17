@@ -22,18 +22,6 @@ class IndexClassView(ListView):
     template_name = 'food/index.html'
     context_object_name = 'item_list'
 
-
-def item(request):
-    return HttpResponse('This is an item view')
-
-def detail(request,item_id):
-    item = Item.objects.get(pk=item_id)
-    context = {
-        'item': item,
-    }
-    template = loader.get_template('food/item.html')
-    return render(request,'food/item.html', context)
-
 class FoodDetail(DetailView):
     model = Item;
     template_name = 'food/item.html'
@@ -67,3 +55,21 @@ def delete_item(request, id):
         return redirect('food:index')
     
     return render(request, 'food/item.html', {'item': item})
+
+
+'''
+
+
+def item(request):
+    return HttpResponse('This is an item view')
+
+def detail(request,item_id):
+    item = Item.objects.get(pk=item_id)
+    context = {
+        'item': item,
+    }
+    template = loader.get_template('food/item.html')
+    return render(request,'food/item.html', context)
+
+
+'''
