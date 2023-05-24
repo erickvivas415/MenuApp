@@ -1,14 +1,31 @@
 {% extends 'food/base.html' %}
 
 {% block content %}
-<div class="col-md-6 offset-md-3 mt-3">
 
-    <form class="mt-4" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary" type="submit">Sign Up</button>
-    </form>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-dark">
+                    <div class="card-title">
+                        Register
+                    </div>
+                    <div class="card-body">
+                        <form class="mt-4" method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    <p class="text-uppercase">{{ field.name }}</p>
+                                    <p>{{ field }}</p>
+                                </div>
+                            {% endfor %}
+                            <button class="btn btn-secondary" type="submit">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
